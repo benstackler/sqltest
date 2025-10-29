@@ -1,0 +1,1 @@
+select * from hof left join players on hof.playerid = players.playerid where hof.inducted = 'Y' and yearid > 1990 order by yearid desc;
