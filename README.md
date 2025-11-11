@@ -6,7 +6,7 @@ Using both the Hall of Fame and Master databases on Kaggle's Baseball Databank, 
 1. 	[Kaggle Master Baseball Database](https://www.kaggle.com/datasets/open-source-sports/baseball-databank/data?select=Master.csv)
 2.  [Kaggle Hall of Fame Baseball Database](https://www.kaggle.com/datasets/open-source-sports/baseball-databank/data?select=HallOfFame.csv)
 
-## Various SQL Alteration Competencies
+## Beginner SQL Alteration Competencies
 1. :inbox_tray: [Basic Table Creation, Data Import, and Table Joins](https://github.com/benstackler/sqltest/blob/Basic-Data-Import-and-Join/README.md)
 2. :heavy_plus_sign: [Combining Names Using CONCAT](https://github.com/benstackler/sqltest/blob/Combining-Names/README.md)
 3. :ballot_box: [Dividing Integers into Percentages Using Decimals](https://github.com/benstackler/sqltest/blob/Dividing-into-Percentages/README.md)
