@@ -1,4 +1,6 @@
-  # :heavy_plus_sign: Now let's combine our name columns using the CONCAT function
+  # :heavy_plus_sign: Combining Names Using CONCAT
+  
+  ## Now let's combine our name columns using the CONCAT function
 
 ````sql
 select CONCAT(namefirst, ' ', namelast) as fullname, yearid, votedby  from hof left join master on 
