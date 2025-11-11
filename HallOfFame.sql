@@ -1,43 +1,3 @@
-# Creating Necessary Table - Master
-
- Create table master (playerID text, birthyear int, birthmonth int, birthday int, birthcountry text, 
- birthstate text, birthcity text, deathyear int, deathmonth int, deathday int, deathcountry text, deathstate text, 
- deathcity text, namefirst text, namelast text, namegiven text, weight int, height int, bats text, throws text, debut date, 
- finalgame date, retroid text, bbrefid text);
-
-# Importing Kaggle Dataset - Master
-# 1. Tables
-# 2. "Master"
-# 3. Import/Export data
-# 4. "Master.csv"
-# 5. "Header" - checked
-# 6. "Delimiter" - comma
-
-# Checking Your Import - Master
-
-  Select * from master;
-
-# Creating Necessary Table - HOF
-
-Create table HOF 
-(playerid text, yearid int, votedby text, ballots int, needed int, votes int, 
-inducted text, category text, needed_note text);
-
-# Importing Kaggle Dataset - HOF
-# 1. Tables
-# 2. "HOF"
-# 3. Import/Export data
-# 4. "HallofFame.csv"
-# 5. "Header" - checked
-# 6. "Delimiter" - comma
-
-# Checking Your Import - HOF
-  Select * from HOF;
-
-# Join tables together so that we can find Hall of Fame player profiles inducted after 1990
-
-select * from hof left join master on hof.playerid = master.playerid where hof.inducted = 'Y' and yearid > 1990 order by yearid desc;
-
 # Let's limit our results to player name, year, and voting committee
 
  Select namefirst, namelast, yearid, votedby  from hof left join master on 
@@ -49,7 +9,20 @@ hof.playerid = master.playerid where hof.inducted = 'Y' and yearid > 1990 order 
 
 # Let's add the percentage of votes received by each HOF inductee (approval percentage) by converting our integers into decimals, rounding, and ensuring zero ballot cases do not cause errors
 
-
 select CONCAT(namefirst, ' ', namelast) as fullname, yearid, votedby, 
  ROUND(CAST(votes AS DECIMAL(10,2)) / NULLIF(ballots, 0) * 100, 2) AS approval_percentage  from hof left join master on 
 hof.playerid = master.playerid where hof.inducted = 'Y' and yearid > 1990 order by yearid desc;
+
+# Now let's saved our joined table query as an actual separate table
+
+Create table joined_hof as 
+Select hof.*, master.playerid as masterplayerid, master.namefirst, master.namelast, master.weight, master.height, master.birthyear from hof left join master on 
+hof.playerid = master.playerid where hof.inducted = 'Y';
+
+# Note: must differentiate the key column (i.e. playerid) by renaming it for one of the tables being joined
+
+# What if we want to look at just hall-of-famers who were born after 1950?
+
+select * from joined_hof where inducted = 'Y' and birthyear > 1950 order by birthyear desc;
+
+
