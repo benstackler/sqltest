@@ -41,4 +41,9 @@ select * from hof left join master on hof.playerid = master.playerid where hof.i
 # Let's limit our results to player name, year, and voting committee
 
  Select namefirst, namelast, yearid, votedby  from hof left join master on 
+
+ # Now let's combine our name columns using the CONCAT function
+
+ select CONCAT(namefirst, ' ', namelast) as fullname, yearid, votedby  from hof left join master on 
+hof.playerid = master.playerid where hof.inducted = 'Y' and yearid > 1990 order by yearid desc;
 hof.playerid = master.playerid where hof.inducted = 'Y' and yearid > 1990 order by yearid desc;
