@@ -1,6 +1,7 @@
 # :ballot_box: Dividing into Percentages Using Decimals
 
-### Let's add the percentage of votes received by each HOF inductee (approval percentage) by converting our integers into decimals, rounding, and ensuring zero ballot cases do not cause errors
+### Let's add the percentage of votes received by each HOF inductee (approval percentage). 
+We want to convert our integer variables into decimals (using cast) and making zero-ballot instances (e.g. Veteran's Committee) null to avoid errors.
 
 ````sql
 select CONCAT(namefirst, ' ', namelast) as fullname, yearid, votedby, 
