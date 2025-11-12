@@ -15,5 +15,6 @@ We explore various SQL concepts utilizing Kaggle's MLB Master and HOF player dat
 5. :window: [Creating New Views](https://github.com/benstackler/MLB-HOF-SQL/blob/Creating-New-Views/README.md)
 6. :magic_wand: [Creating CTEs](https://github.com/benstackler/MLB-HOF-SQL/blob/Creating-CTEs/README.md)
 7. :open_hands: [Creating Aggregate Tables and Grouping](https://github.com/benstackler/MLB-HOF-SQL/blob/Creating-Aggregate-Tables/README.md)
+8. :cricket_game: [Calculating Career Batting Statistics](https://github.com/benstackler/MLB-HOF-SQL/blob/Sorting-Career-Batting-Averages/README.md)
 
 The above links demonstrate various SQL compentencies in relation to the Hall of Fame and Master databases.
