@@ -47,4 +47,4 @@ from hr_sorted left join master on
 hr_sorted.playerid = master.playerid order by hr_sorted.homers desc;
 ````
 ### Final Table with Player Names
-![newtable]https://github.com/benstackler/MLB-HOF-SQL/blob/main/new%20table.png
+![newtable](https://github.com/benstackler/MLB-HOF-SQL/blob/main/new%20table.png)
